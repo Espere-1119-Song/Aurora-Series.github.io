@@ -1,2 +1,2 @@
-# embodied-agent-eval.github.io
-This is the project website for the paper "Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making".
+# Aurora-Series.github.io
+This is the project website for the paper "Aurora Series: A more efficient multimodal large language model series for video".
