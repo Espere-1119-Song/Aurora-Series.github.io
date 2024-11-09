@@ -253,45 +253,95 @@
 
 
     <!-- Add the video element here -->
+    <!-- 一行并排放两个视频 -->
     <div class="video-container">
-        <video autoplay muted loop playsinline style="width: 100%; height: auto;">
-            <source src="website/videos/vdc_1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video> 
-        <div class="collapsible-section">
-            <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh">
-                <span>View results of logic form accuracy for transition modeling</span>
-                <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </button>
-             <div id="transition_table_vh" class="collapse-content">
-                <table class="table is-striped is-hoverable" id="vh_logical_matching_score" style="width: 100%; table-layout: fixed; font-size: 0.9em;">
-                    <thead>
-                        <tr>
-                            <th style="width: 15%;"><b>[short caption] (26 words)</b></th>
-                            <th style="width: 85%;">In this video, two smartphones are compared side by side as they launch and run the game \'Angry Birds 2\', showcasing their performance and loading times. </th>
-                        </tr>
-                        <tr>
-                            <th style="width: 15%;"><b>[background caption] (65 words)</b></th>
-                            <th style="width: 85%;">The video is set against a clean, white background that emphasizes the two smartphones placed side by side. The lighting is bright and even, creating a neutral atmosphere. The time displayed at the bottom of the screen counts up, indicating the duration of the gameplay. The environment is quiet, with no background noise, allowing the focus to remain on the visual performance of the devices.</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 15%;"><b>[main object caption] (85 words)</b></th>
-                            <th style="width: 85%;">The main subjects are two smartphones, one on the left and one on the right, both displaying the game \'Angry Birds 2\'. The left phone shows a vibrant loading screen with colorful graphics, while the right phone initially displays a blank screen before transitioning to the game. The hands of the presenter are visible, interacting with the devices, tapping the screens to initiate the game. The presenter\'s fingers move swiftly, indicating a sense of urgency and excitement as they compare the responsiveness of both devices.</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 15%;"><b>[camera caption] (76 words)</b></th>
-                            <th style="width: 85%;">The camera work is steady and focused, primarily using a medium shot that captures both smartphones in their entirety. The angle is slightly above the devices, providing a clear view of the screens and the presenter\'s hands. There are no significant camera movements; instead, the focus remains on the devices as they load the game. The video includes a timer overlay at the bottom, which counts the seconds, enhancing the comparative aspect of the performance test. The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance.</th>
-                        </tr>
-                        <tr>
-                            <th style="width: 15%;"><b>[detailed caption] (609 words)</b></th>
-                            <th style="width: 85%;">The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance. Both devices prominently display the YouTube application interface, featuring a video titled “Dart Moon Collision,” which is highlighted as \"#1 ON TRENDING\" from the \"NASA.gov Video\" channel. Below the video pane, viewers can see the view counts and like/dislike statistics, along with a curated list of additional video suggestions at the bottom of the screens. A consistent timestamp of 6:12 PM is visible, adding a temporal context to the scene. A watermark logo is also present, likely indicating the content\'s publisher or owner, subtly reinforcing the source of the material being showcased.</th>
-                        </tr>
-                    </thead>
-                </table>
-             </div>
-        </div>
+        <table style="width: 100%;">
+            <tr>
+                <!-- First video cell -->
+                <td style="width: 50%; padding: 10px;">
+                    <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+                        <source src="website/videos/vdc_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video> 
+                    <div class="collapsible-section">
+                        <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh_1">
+                            <span>View results #1</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        <div id="transition_table_vh_1" class="collapse-content">
+                            <table class="table is-striped is-hoverable" id="vh_logical_matching_score" style="width: 100%; table-layout: fixed; font-size: 0.9em;">
+                                <thead>
+                                    <tr> 
+                                        <th style="width: 12%;"><b>[short caption] (26 words)</b></th>
+                                        <th style="width: 88%;">In this video, two smartphones are compared side by side as they launch and run the game \'Angry Birds 2\', showcasing their performance and loading times. </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[background caption] (65 words)</b></th>
+                                        <th style="width: 88%;">The video is set against a clean, white background that emphasizes the two smartphones placed side by side. The lighting is bright and even, creating a neutral atmosphere. The time displayed at the bottom of the screen counts up, indicating the duration of the gameplay. The environment is quiet, with no background noise, allowing the focus to remain on the visual performance of the devices.</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[main object caption] (85 words)</b></th>
+                                        <th style="width: 88%;">The main subjects are two smartphones, one on the left and one on the right, both displaying the game \'Angry Birds 2\'. The left phone shows a vibrant loading screen with colorful graphics, while the right phone initially displays a blank screen before transitioning to the game. The hands of the presenter are visible, interacting with the devices, tapping the screens to initiate the game. The presenter\'s fingers move swiftly, indicating a sense of urgency and excitement as they compare the responsiveness of both devices.</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[camera caption] (76 words)</b></th>
+                                        <th style="width: 88%;">The camera work is steady and focused, primarily using a medium shot that captures both smartphones in their entirety. The angle is slightly above the devices, providing a clear view of the screens and the presenter\'s hands. There are no significant camera movements; instead, the focus remains on the devices as they load the game. The video includes a timer overlay at the bottom, which counts the seconds, enhancing the comparative aspect of the performance test. The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance.</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[detailed caption] (609 words)</b></th>
+                                        <th style="width: 88%;">The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance. Both devices prominently display the YouTube application interface, featuring a video titled "Dart Moon Collision," which is highlighted as "#1 ON TRENDING" from the "NASA.gov Video" channel. Below the video pane, viewers can see the view counts and like/dislike statistics, along with a curated list of additional video suggestions at the bottom of the screens. A consistent timestamp of 6:12 PM is visible, adding a temporal context to the scene. A watermark logo is also present, likely indicating the content\'s publisher or owner, subtly reinforcing the source of the material being showcased.</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+                
+                <!-- Second video cell -->
+                <td style="width: 50%; padding: 10px;">
+                    <video autoplay muted loop playsinline style="width: 100%; height: auto;">
+                        <source src="website/videos/vdc_2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video> 
+                    <div class="collapsible-section">
+                        <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh_2">
+                            <span>View results #2</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                        <div id="transition_table_vh_2" class="collapse-content">
+                            <table class="table is-striped is-hoverable" id="vh_logical_matching_score" style="width: 100%; table-layout: fixed; font-size: 0.9em;">
+                                <thead>
+                                    <tr> 
+                                        <th style="width: 12%;"><b>[short caption] (26 words)</b></th>
+                                        <th style="width: 88%;">In this video, two smartphones are compared side by side as they launch and run the game \'Angry Birds 2\', showcasing their performance and loading times. </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[background caption] (65 words)</b></th>
+                                        <th style="width: 88%;">The video is set against a clean, white background that emphasizes the two smartphones placed side by side. The lighting is bright and even, creating a neutral atmosphere. The time displayed at the bottom of the screen counts up, indicating the duration of the gameplay. The environment is quiet, with no background noise, allowing the focus to remain on the visual performance of the devices.</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[main object caption] (85 words)</b></th>
+                                        <th style="width: 88%;">The main subjects are two smartphones, one on the left and one on the right, both displaying the game \'Angry Birds 2\'. The left phone shows a vibrant loading screen with colorful graphics, while the right phone initially displays a blank screen before transitioning to the game. The hands of the presenter are visible, interacting with the devices, tapping the screens to initiate the game. The presenter\'s fingers move swiftly, indicating a sense of urgency and excitement as they compare the responsiveness of both devices.</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[camera caption] (76 words)</b></th>
+                                        <th style="width: 88%;">The camera work is steady and focused, primarily using a medium shot that captures both smartphones in their entirety. The angle is slightly above the devices, providing a clear view of the screens and the presenter\'s hands. There are no significant camera movements; instead, the focus remains on the devices as they load the game. The video includes a timer overlay at the bottom, which counts the seconds, enhancing the comparative aspect of the performance test. The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance.</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="width: 12%;"><b>[detailed caption] (609 words)</b></th>
+                                        <th style="width: 88%;">The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance. Both devices prominently display the YouTube application interface, featuring a video titled "Dart Moon Collision," which is highlighted as "#1 ON TRENDING" from the "NASA.gov Video" channel. Below the video pane, viewers can see the view counts and like/dislike statistics, along with a curated list of additional video suggestions at the bottom of the screens. A consistent timestamp of 6:12 PM is visible, adding a temporal context to the scene. A watermark logo is also present, likely indicating the content\'s publisher or owner, subtly reinforcing the source of the material being showcased.</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <!-- <section class="hero teaser">
@@ -1762,7 +1812,6 @@
                                 </div>
                                 <br>
                             </li>
-
                             <li><strong>Subgoal Decomposition:</strong>
                                 <ul>
                                     <li>Subgoal decomposition is not easier than action sequencing in abstract action spaces.</li>
@@ -3362,12 +3411,12 @@
                                                     <td style="text-align: center;"><b>0.0</b></td>
                                                     <td style="text-align: center;">9.0</td>
                                                     <td style="text-align: center;">6.0</td>
-                                                    <td style="text-align: center;">36.0</td>
+                                                    <td style="text-align: center;"><b>37.0</b></td>
                                                     <td style="text-align: center;">35.0</td>
-                                                    <td style="text-align: center;">1.0</td>
-                                                    <td style="text-align: center;">1.0</td>
                                                     <td style="text-align: center;"><b>0.0</b></td>
-                                                    <td style="text-align: center;">4.0</td>
+                                                    <td style="text-align: center;">3.0</td>
+                                                    <td style="text-align: center;">5.0</td>
+                                                    <td style="text-align: center;">9.0</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Cohere Command R</td>
@@ -3381,14 +3430,14 @@
                                                     <td style="text-align: center;">38.0</td>
                                                     <td style="text-align: center;"><b>0.0</b></td>
                                                     <td style="text-align: center;">1.0</td>
-                                                    <td style="text-align: center;">8.0</td>
-                                                    <td style="text-align: center;">8.0</td>
-                                                    <td style="text-align: center;">43.0</td>
-                                                    <td style="text-align: center;">31.0</td>
-                                                    <td style="text-align: center;">12.0</td>
-                                                    <td style="text-align: center;">12.0</td>
+                                                    <td style="text-align: center;"><b>0.0</b></td>
+                                                    <td style="text-align: center;"><b>1.0</b></td>
+                                                    <td style="text-align: center;">38.0</td>
+                                                    <td style="text-align: center;">32.0</td>
                                                     <td style="text-align: center;">4.0</td>
-                                                    <td style="text-align: center;">8.0</td>
+                                                    <td style="text-align: center;">6.0</td>
+                                                    <td style="text-align: center;">4.0</td>
+                                                    <td style="text-align: center;">12.0</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Cohere Command R+</td>
