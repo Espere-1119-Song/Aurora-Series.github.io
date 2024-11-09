@@ -255,7 +255,7 @@
     <!-- Add the video element here -->
     <div class="video-container">
         <video autoplay muted loop playsinline style="width: 100%; height: auto;">
-            <source src="website/videos/eai-action.mp4" type="video/mp4">
+            <source src="website/videos/vdc_1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video> 
         <div class="collapsible-section">
@@ -265,11 +265,40 @@
               <i class="fas fa-angle-down" aria-hidden="true"></i>
                 </span>
             </button>
-            
+            <!-- Add the caption table: caption label | caption -->
+             <div id="transition_table_vh" class="collapse-content">
+                <table class="table is-striped is-hoverable" id="vh_logical_matching_score" style="width: 100%; table-layout: fixed; font-size: 0.9em;">
+                    <caption style="caption-side: top; text-align: center; color: black; font-style: italic;">
+                        <b>Table:</b> Full results of logic form accuracy for <em>transition modeling</em> in VHO
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th><b>[short caption] (26 words)</b></th>
+                            <th>n this video, two smartphones are compared side by side as they launch and run the game \'Angry Birds 2\', showcasing their performance and loading times. </th>
+                        </tr>
+                        <tr>
+                            <th><b>[background caption] (65 words)</b></th>
+                            <th>The video is set against a clean, white background that emphasizes the two smartphones placed side by side. The lighting is bright and even, creating a neutral atmosphere. The time displayed at the bottom of the screen counts up, indicating the duration of the gameplay. The environment is quiet, with no background noise, allowing the focus to remain on the visual performance of the devices.</th>
+                        </tr>
+                        <tr>
+                            <th><b>[main object caption] (85 words)</b></th>
+                            <th>The main subjects are two smartphones, one on the left and one on the right, both displaying the game \'Angry Birds 2\'. The left phone shows a vibrant loading screen with colorful graphics, while the right phone initially displays a blank screen before transitioning to the game. The hands of the presenter are visible, interacting with the devices, tapping the screens to initiate the game. The presenter\'s fingers move swiftly, indicating a sense of urgency and excitement as they compare the responsiveness of both devices.</th>
+                        </tr>
+                        <tr>
+                            <th><b>[camera caption] (76 words)</b></th>
+                            <th>The camera work is steady and focused, primarily using a medium shot that captures both smartphones in their entirety. The angle is slightly above the devices, providing a clear view of the screens and the presenter\'s hands. There are no significant camera movements; instead, the focus remains on the devices as they load the game. The video includes a timer overlay at the bottom, which counts the seconds, enhancing the comparative aspect of the performance test. The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance.</th>
+                        </tr>
+                        <tr>
+                            <th><b>[detailed caption] (609 words)</b></th>
+                            <th>The video opens with a visually striking presentation of two smartphones positioned side by side against a pristine white background, which serves to enhance the focus on the devices themselves. The lighting is bright and evenly distributed, creating a neutral and distraction-free atmosphere that allows viewers to concentrate on the smartphones and their performance. Both devices prominently display the YouTube application interface, featuring a video titled “Dart Moon Collision,” which is highlighted as \"#1 ON TRENDING\" from the \"NASA.gov Video\" channel. Below the video pane, viewers can see the view counts and like/dislike statistics, along with a curated list of additional video suggestions at the bottom of the screens. A consistent timestamp of 6:12 PM is visible, adding a temporal context to the scene. A watermark logo is also present, likely indicating the content\'s publisher or owner, subtly reinforcing the source of the material being showcased.</th>
+                        </tr>
+                    </thead>
+                </table>
+             </div>
         </div>
     </div>
 
-    <!-- <section class="hero teaser">
+    <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
             <video id="teaser" autoplay muted loop playsinline controls width="100%">
@@ -310,7 +339,7 @@
                     </div>
                 </div>
 
-                <br> -->
+                <br>
 
                 <h3 class="title is-3">Benchmark Viewer</h3>
                 <iframe
