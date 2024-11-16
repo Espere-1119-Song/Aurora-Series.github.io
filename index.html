@@ -650,49 +650,66 @@
         </div>
     </section>
 
-    <!-- Evaluation and Benchmark -->
+    <!-- Evaluation-->
     <section class="section" id="embodied_agent_interface_detail">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <h2 class="title is-2" style="text-align: center;">Evaluation and Benchmark</h2>
+                <h2 class="title is-2" style="text-align: center;">Evaluation</h2>
                 <br>
                 <div class="content has-text-justified">
                     <h3 class="title is-4">Benchmarking video detailed captioning.</h3>
                     <p>
                         AuroraCap achieves superior performance in video detailed captioning while utilizing significantly fewer visual tokens than other models, fully highlighting the efficiency of AuroraCap.
                     </p>
-
-                </div>
-                <div class="content has-text-justified">
-                    <h3 class="title is-4">VDCscore: Evaluating Detailed Captions with LLMs</h3>
-                    <p>
-                        We introduce VDCscore, a novel quantitative metric that utilizes LLMs to evaluate the similarity between predicted and ground-truth detailed captions through a divide-and-conquer approach. 
-                        The core idea of VDCscore is to decompose long detailed captions into multiple short question-answering pairs, avergae the evaluation of each pair as the final result.
-                    </p>
-                    <d-figure id="fig-vision_connector"></d-figure>
+                    <d-figure id="fig-vision_connector">
                         <figure>
-                            <img data-zoomable="" draggable="false" src="website/img/vdcscore.png" alt="" style="width: 90%;display: block; margin: 0 auto;">
+                            <img data-zoomable="" draggable="false" src="website/img/vdc_benchmark.png" alt="Video length in VDC" style="width: 90%;display: block; margin: 0 auto;">
                             <figcaption>
-                                VDCscore evaluation pipeline.
+                                Comparison between various models with different number of visual tokens input on VDC.
                             </figcaption>
                         </figure>
                     </d-figure>
-                    <div class="collapsible-section">
-                        <button class="button is-fullwidth toggle-section" aria-controls="model_table">
-                            <span>View benchmark</span>
-                            <span class="icon is-small">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                        <div id="model_table" class="collapse-content">
-                            <iframe
-                            src="https://huggingface.co/datasets/wchai/Video-Detailed-Caption/embed/viewer/default/VDC_captions"
-                            frameborder="0"
-                            width="100%"
-                            height="560px"
-                            ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard-->
+    <section class="section" id="embodied_agent_interface_detail">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <h2 class="title is-2" style="text-align: center;">Leaderboard</h2>
+                <br>
+                <div class="content has-text-justified">
+                    <h4 class="title is-4">🤩Welcome! Submit your results and see the leaderboard update promptly to showcase your achievements.</h4>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="main-results-tab" data-bs-toggle="tab"
+                                data-bs-target="#benchmark-table-content" type="button" role="tab"
+                                aria-controls="main-results-tab" aria-selected="true">BEHAVIOR</button>
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="eurus-code-table-tab" data-bs-toggle="tab"
+                                data-bs-target="#eurus-code-table-content" type="button" role="tab"
+                                aria-controls="eurus-code-table-tab" aria-selected="false">VirtualHome</button>
+                        </li> -->
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="benchmark-table-content" role="tabpanel"
+                            aria-labelledby="benchmark-table-content">
+                            <div id="behavior-benchmark-main-table"></div>
                         </div>
+                        <!-- <div class="tab-pane fade" id="eurus-code-table-content" role="tabpanel"
+                            aria-labelledby="eurus-code-table-content">
+                            <div id="virtualhome-benchmark-main-table"></div>
+                        </div> -->
                     </div>
+                    <p>
+                        We present a quantitative comparison between AuroraCap with existing state-of-the-art large multimodal models across various sections of structured captions in VDC. 
+                        # F stands for the frame sampling number of the input video, and TPF represents the visual tokens per frame. 
+                        Note that the average key frame number in VDC is 10.
+                    </p>
+
                 </div>
             </div>
         </div>
@@ -702,32 +719,6 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="main-results-tab" data-bs-toggle="tab"
-                            data-bs-target="#benchmark-table-content" type="button" role="tab"
-                            aria-controls="main-results-tab" aria-selected="true">BEHAVIOR</button>
-                    </li>
-                    <!-- <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="eurus-code-table-tab" data-bs-toggle="tab"
-                            data-bs-target="#eurus-code-table-content" type="button" role="tab"
-                            aria-controls="eurus-code-table-tab" aria-selected="false">VirtualHome</button>
-                    </li> -->
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="benchmark-table-content" role="tabpanel"
-                        aria-labelledby="benchmark-table-content">
-                        <div id="behavior-benchmark-main-table"></div>
-                    </div>
-                    <!-- <div class="tab-pane fade" id="eurus-code-table-content" role="tabpanel"
-                        aria-labelledby="eurus-code-table-content">
-                        <div id="virtualhome-benchmark-main-table"></div>
-                    </div> -->
-                </div>
-
-                <br>
-
-                
 
                 <h3 class="title is-3">Empirical Findings</h3>
                     <div class="content has-text-justified">
