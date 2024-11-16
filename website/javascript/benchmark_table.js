@@ -211,8 +211,7 @@ var colorFormatterObject = function (cell, formatterParams) {
     return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
-
-var barColorFn = function (cell, formatterParams) {
+var colorFormatterAvg= function (cell, formatterParams) {
     var value = cell.getValue();
 
     // Check for the specific string "-"
@@ -220,30 +219,66 @@ var barColorFn = function (cell, formatterParams) {
         return value;
     }
 
+    // Default values
     var defaults = {
-        range: [-50, 50],
-        low: { r: 255, g: 255, b: 255 },
-        high: { r: 206, g: 212, b: 218 }
+        min: 0.0,
+        max: 100.0,
+        startColor: { r: 255, g: 255, b: 255 },
+        endColor: { r: 206, g: 212, b: 218 }
     };
 
     // Override defaults with provided formatterParams values
-    var range = (formatterParams && formatterParams.range) || defaults.range;
-    var low = (formatterParams && formatterParams.low) || defaults.low;
-    var high = (formatterParams && formatterParams.high) || defaults.high;
+    var min = (formatterParams && formatterParams.min) || defaults.min;
+    var max = (formatterParams && formatterParams.max) || defaults.max;
+    var startColor = (formatterParams && formatterParams.startColor) || defaults.startColor;
+    var endColor = (formatterParams && formatterParams.endColor) || defaults.endColor;
 
     // Normalize the value between 0 and 1
-    var normalizedValue = (value - range[0]) / (range[1] - range[0]);
+    var normalizedValue = (value - min) / (max - min);
 
     // Compute the color gradient 
-    var red = Math.floor(low.r + (high.r - low.r) * normalizedValue);
-    var green = Math.floor(low.g + (high.g - low.g) * normalizedValue);
-    var blue = Math.floor(low.b + (high.b - low.b) * normalizedValue);
+    var red = Math.floor(startColor.r + (endColor.r - startColor.r) * normalizedValue);
+    var green = Math.floor(startColor.g + (endColor.g - startColor.g) * normalizedValue);
+    var blue = Math.floor(startColor.b + (endColor.b - startColor.b) * normalizedValue);
 
     // make sure the value is rounded to 1 decimal place
-    value = parseFloat(value).toFixed(1);
+    value = parseFloat(value).toFixed(1)
 
     return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
+
+// var barColorFn = function (cell, formatterParams) {
+//     var value = cell.getValue();
+
+//     // Check for the specific string "-"
+//     if (value === "-") {
+//         return value;
+//     }
+
+//     var defaults = {
+//         range: [-50, 50],
+//         low: { r: 255, g: 255, b: 255 },
+//         high: { r: 206, g: 212, b: 218 }
+//     };
+
+//     // Override defaults with provided formatterParams values
+//     var range = (formatterParams && formatterParams.range) || defaults.range;
+//     var low = (formatterParams && formatterParams.low) || defaults.low;
+//     var high = (formatterParams && formatterParams.high) || defaults.high;
+
+//     // Normalize the value between 0 and 1
+//     var normalizedValue = (value - range[0]) / (range[1] - range[0]);
+
+//     // Compute the color gradient 
+//     var red = Math.floor(low.r + (high.r - low.r) * normalizedValue);
+//     var green = Math.floor(low.g + (high.g - low.g) * normalizedValue);
+//     var blue = Math.floor(low.b + (high.b - low.b) * normalizedValue);
+
+//     // make sure the value is rounded to 1 decimal place
+//     value = parseFloat(value).toFixed(1);
+
+//     return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
+// }
 
 document.addEventListener('DOMContentLoaded', function () {
     Promise.all([
@@ -371,8 +406,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Avg. VDC",
                     columns: [
-                        { title: "Acc.", field: "avg_acc", hozAlign: "center", formatter: barColorFn, minWidth: 50 },
-                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: barColorFn, minWidth: 70 },
+                        { title: "Acc.", field: "avg_acc", hozAlign: "center", formatter: colorFormatterAvg, minWidth: 50 },
+                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: colorFormatterAvg, minWidth: 70 },
                     ]
                 },
                 {
