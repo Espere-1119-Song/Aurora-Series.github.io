@@ -69,7 +69,7 @@ function single_curve() {
             return;
         }
         var display_image = image_group.select('#display_image_tome');
-        var newImagePath = 'assets/img/single_curve/' + `${currentSampleIndex}` + '/' + 
+        var newImagePath = 'website/img/single_curve/' + `${currentSampleIndex}` + '/' + 
             (indicator_data[currentSampleIndex-1] && indicator_data[currentSampleIndex-1].image_list[currentIndex] || '1.png');
         console.log('New image path:', newImagePath);
         display_image.attr('xlink:href', newImagePath);
@@ -120,7 +120,7 @@ function single_curve() {
             .attr('opacity', item => item.id === d.id ? 1.0 : 0.2);
         
         base_image_name = d.id;
-        base_dir = `assets/img/single_curve/${base_image_name}/`;
+        base_dir = `website/img/single_curve/${base_image_name}/`;
         currentIndex = 0;
         currentSampleIndex = d.id;
         updateImage(); 
@@ -145,7 +145,7 @@ function single_curve() {
                 if (d.id === 'display_image_tome') {
                     return base_dir + '1.png';
                 } else {
-                    return 'assets/img/404.png';  // Make sure this file exists
+                    return 'website/img/404.png';  // Make sure this file exists
                 }
             })
             .attr('id', function(d) { return d.id ; })
@@ -158,7 +158,7 @@ function single_curve() {
             .attr('width', indicator_image_size)
             .attr('height', indicator_image_size)
             .attr('xlink:href', function(d) {
-                return "assets/img/single_curve/" + `${d.id}`+ '/1.png';
+                return "website/img/single_curve/" + `${d.id}`+ '/1.png';
             })
             .attr('id', function(d) { return d.id+'_tome'; })
             .attr('x', function(d) { return d.x; })
