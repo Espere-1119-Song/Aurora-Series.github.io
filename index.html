@@ -630,13 +630,13 @@
                         </figure>
                     </d-figure>
                     <div class="collapsible-section">
-                        <button class="button is-fullwidth toggle-section" aria-controls="model_table">
+                        <button class="button is-fullwidth toggle-section" aria-controls="benchmark_table">
                             <span>View benchmark</span>
                             <span class="icon is-small">
                                 <i class="fas fa-angle-down" aria-hidden="true"></i>
                             </span>
                         </button>
-                        <div id="model_table" class="collapse-content">
+                        <div id="benchmark_table" class="collapse-content">
                             <iframe
                             src="https://huggingface.co/datasets/wchai/Video-Detailed-Caption/embed/viewer/default/VDC_captions"
                             frameborder="0"
@@ -681,7 +681,13 @@
                 <h2 class="title is-2" style="text-align: center;">Leaderboard</h2>
                 <br>
                 <div class="content has-text-justified">
-                    <h4 class="title is-4">🤩Welcome! Submit your results and see the leaderboard update promptly to showcase your achievements.</h4>
+                    <h4 class="title is-4">🤩Welcome! Submit your scores now and watch the leaderboard refresh with your achievements! </h4>
+                    <p>
+                        Please remember to report your frame rate and tokens per frame with each submission.
+
+                        Reach out to us at wchai@uw.edu and enxin.23@intl.zju.edu.cn .
+                        Email us at <a href="mailto:wchai@uw.edu"><i class="fas fa-envelope"></i></a> or email2@example.com.
+                    </p>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="main-results-tab" data-bs-toggle="tab"
@@ -704,6 +710,7 @@
                             <div id="virtualhome-benchmark-main-table"></div>
                         </div> -->
                     </div>
+                    <br>
                     <p>
                         We present a quantitative comparison between AuroraCap with existing state-of-the-art large multimodal models across various sections of structured captions in VDC. 
                         # F stands for the frame sampling number of the input video, and TPF represents the visual tokens per frame. 
