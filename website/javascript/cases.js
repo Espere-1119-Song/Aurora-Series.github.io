@@ -38,6 +38,10 @@ function cases() {
     }
 
     function image_init() {
+        // Main video container - add text-align center
+        video_overlay
+        .style('text-align', 'center');
+
         // Main video
         video_overlay.append('video')
             .attr('id', 'display_case_video1')
