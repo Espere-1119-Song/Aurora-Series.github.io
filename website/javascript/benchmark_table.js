@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: "Model<br>Family",
                     field: "model",
                     widthGrow: 1.5,
-                    minWidth: 140
+                    minWidth: 160
                 },
                 {
                     title: "# F",
@@ -220,13 +220,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: "TPF",
                     field: "tpf",
                     widthGrow: 0.9,
-                    minWidth: 70
+                    minWidth: 90
                 },
                 {
                     title: "Avg. VDC",
                     columns: [
                         { title: "Acc.", field: "avg_acc", hozAlign: "center", formatter: colorFormatterAvg, minWidth: 50 },
-                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: colorFormatterAvg, minWidth: 70 },
+                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: colorFormatterAvg, minWidth: 120 },
                     ]
                 },
                 {
