@@ -407,13 +407,13 @@
                             Finally, we conduct end-to-end training, which means all the components are trainable, with the most high-quality public data during language stage. 
                         </p>
                         <div class="collapsible-section">
-                            <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh_2">
+                            <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh_3">
                                 <span>View traiset of AuroraCap</span>
                                 <span class="icon is-small">
                                     <i class="fas fa-angle-down" aria-hidden="true"></i>
                                 </span>
                             </button>
-                            <div id="transition_table_vh_2" class="collapse-content">
+                            <div id="transition_table_vh_3" class="collapse-content">
                                 <iframe
                                 src="https://huggingface.co/datasets/wchai/AuroraCap-trainset/embed/viewer/default/projection"
                                 frameborder="0"
@@ -439,14 +439,167 @@
                             <strong>Video collection and processing.</strong>
                             We building VDC upon Panda-70M<d-cite key="chen2024panda"></d-cite>, Ego4D<d-cite key="grauman2022ego4d"></d-cite>, Mixkit<d-cite key="mixkit"></d-cite>, Pixabay<d-cite key="pixabay"></d-cite>, and Pexels<d-cite key="pexels"></d-cite>. 
                             We first split the video into clips and apply dense frame extraction, then manually replacing blurry frames with adjacent clear ones.
+                            <div class="collapsible-section">
+                                <button class="button is-fullwidth toggle-section" aria-controls="model_table">
+                                    <span>View benchmark comparison for video captioning task</span>
+                                    <span class="icon is-small">
+                                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <div id="model_table" class="collapse-content">
+                                    <table class="table is-striped is-hoverable" id="model_info">
+                                        <caption style="caption-side: top; text-align: center; color: black; font-style: italic;">
+                                            <b>Table 1 :</b> Benchmark comparison for video captioning task. Ave. Length indicates the average number of words per caption.
+                                        </caption>
+                                        <thead>
+                                            <tr>
+                                                <th class="tb-hdr">Dataset</th>
+                                                <th>Theme</th>
+                                                <th style="text-align: center; vertical-align: middle;"># Video</th>
+                                                <th style="text-align: center; vertical-align: middle;"># Clip</th>
+                                                <th style="text-align: center; vertical-align: middle;"># Caption</th>
+                                                <th style="text-align: center; vertical-align: middle;"># Word</th>
+                                                <th style="text-align: center; vertical-align: middle;"># Vocab.</th>
+                                                <th style="text-align: center; vertical-align: middle;">Ave. Length</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="italic">MSVD<d-cite key="chen2011collecting"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Open</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,970</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,970</td>
+                                                <td style="text-align: center; vertical-align: middle;">70,028</td>
+                                                <td style="text-align: center; vertical-align: middle;">607,339</td>
+                                                <td style="text-align: center; vertical-align: middle;">13,010</td>
+                                                <td style="text-align: center; vertical-align: middle;">8.67</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">MSR-VTT<d-cite key="xu2016msr"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Open</td>
+                                                <td style="text-align: center; vertical-align: middle;">7,180</td>
+                                                <td style="text-align: center; vertical-align: middle;">10,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">200,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,856,523</td>
+                                                <td style="text-align: center; vertical-align: middle;">29,316</td>
+                                                <td style="text-align: center; vertical-align: middle;">9.28</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">ActivityNet<d-cite key="krishna2017dense"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Open</td>
+                                                <td style="text-align: center; vertical-align: middle;">20,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">100,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">100,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,340,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">15,564</td>
+                                                <td style="text-align: center; vertical-align: middle;">13.40</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">S-MiT<d-cite key="monfort2021spoken"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Open</td>
+                                                <td style="text-align: center; vertical-align: middle;">515,912</td>
+                                                <td style="text-align: center; vertical-align: middle;">515,912</td>
+                                                <td style="text-align: center; vertical-align: middle;">515,912</td>
+                                                <td style="text-align: center; vertical-align: middle;">5,618,064</td>
+                                                <td style="text-align: center; vertical-align: middle;">50,570</td>
+                                                <td style="text-align: center; vertical-align: middle;">10.89</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">M-VAD<d-cite key="torabi2015using"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Movie</td>
+                                                <td style="text-align: center; vertical-align: middle;">92</td>
+                                                <td style="text-align: center; vertical-align: middle;">48,986</td>
+                                                <td style="text-align: center; vertical-align: middle;">55,905</td>
+                                                <td style="text-align: center; vertical-align: middle;">519,933</td>
+                                                <td style="text-align: center; vertical-align: middle;">18,269</td>
+                                                <td style="text-align: center; vertical-align: middle;">9.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">MPII-MD<d-cite key="rohrbach2013translating"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Movie</td>
+                                                <td style="text-align: center; vertical-align: middle;">94</td>
+                                                <td style="text-align: center; vertical-align: middle;">68,337</td>
+                                                <td style="text-align: center; vertical-align: middle;">68,375</td>
+                                                <td style="text-align: center; vertical-align: middle;">653,467</td>
+                                                <td style="text-align: center; vertical-align: middle;">24,549</td>
+                                                <td style="text-align: center; vertical-align: middle;">9.56</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">Youcook2<d-cite key="zhou2018towards"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Cooking</td>
+                                                <td style="text-align: center; vertical-align: middle;">2,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">15,400</td>
+                                                <td style="text-align: center; vertical-align: middle;">15,400</td>
+                                                <td style="text-align: center; vertical-align: middle;">121,418</td>
+                                                <td style="text-align: center; vertical-align: middle;">2,583</td>
+                                                <td style="text-align: center; vertical-align: middle;">7.88</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">Charades<d-cite key="sigurdsson2016hollywood"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Human</td>
+                                                <td style="text-align: center; vertical-align: middle;">9,848</td>
+                                                <td style="text-align: center; vertical-align: middle;">10,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">27,380</td>
+                                                <td style="text-align: center; vertical-align: middle;">607,339</td>
+                                                <td style="text-align: center; vertical-align: middle;">13,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">22.18</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">VATEX<d-cite key="wang2019vatex"></d-cite></td>
+                                                <td style="text-align: center; vertical-align: middle;">Open</td>
+                                                <td style="text-align: center; vertical-align: middle;">41,300</td>
+                                                <td style="text-align: center; vertical-align: middle;">41,300</td>
+                                                <td style="text-align: center; vertical-align: middle;">413,000</td>
+                                                <td style="text-align: center; vertical-align: middle;">4,994,768</td>
+                                                <td style="text-align: center; vertical-align: middle;">44,103</td>
+                                                <td style="text-align: center; vertical-align: middle;">12.09</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="italic">VDC (ours)</td>
+                                                <td style="text-align: center; vertical-align: middle;">Open</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,027</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,027</td>
+                                                <td style="text-align: center; vertical-align: middle;">1,027</td>
+                                                <td style="text-align: center; vertical-align: middle;">515,441</td>
+                                                <td style="text-align: center; vertical-align: middle;">20,419</td>
+                                                <td class="highlight-red" style="text-align: center; vertical-align: middle;">500.91</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                         </p>
                         <p class="justify-text">
                             <strong>Structured detailed captions construction pipeline.</strong>
                             We develop a structured detailed captions construction pipeline to generate extra detailed descriptions from various perspectives, significantly extending the length and enhancing the richness compared to previous benchmarks. 
-                            The structured detailed captions includes short, background, main object, camera, and detailed captions.
+                            The structured detailed captions includes camera, short, background, main object, and detailed captions.
+                            <div class="collapsible-section">
+                                <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh_5">
+                                    <span>View definition of structured detailed captions</span>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <div id="transition_table_vh_5" class="collapse-content">
+                                    <ol style="margin-left: 20px;">
+                                        <li style="margin-bottom: 3px;"><strong>Camera caption.</strong>
+                                            Describe the camera work in detail, including shot types, angles, movements, transitions, and any special effects used to enhance the video.
+                                        </li>
+                                        <li style="margin-bottom: 3px;"><strong>Short caption.</strong>
+                                            Summarize the video in one detailed sentence, capturing key actions and the overall mood.
+                                        </li>
+                                        <li style="margin-bottom: 3px;"><strong>Background caption.</strong>
+                                            Provide a detailed description of the background, including objects, location, weather, time, and any dynamic elements.
+                                        </li>
+                                        <li style="margin-bottom: 3px;"><strong>Main Object caption.</strong>
+                                            Give a thorough description of the main subject's actions, attributes, interactions, and movements throughout the video frames.
+                                        </li>
+                                        <li style="margin-bottom: 3px;"><strong>Detailed caption.</strong>
+                                            Generate a detailed, vivid caption for the video, covering all categories, ensuring it's engaging, informative, and rich enough for AI to recreate the video content.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
                         </p>
-                        <br>
-
                     </div>
             </div>
         </div>
