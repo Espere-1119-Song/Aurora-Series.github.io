@@ -3955,13 +3955,20 @@
                     <h2 class="title is-2">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            <b>Problem:</b> We aim to evaluate Large Language Models (LLMs) for embodied decision making. While a significant body of work has been leveraging LLMs for decision making in embodied environments, we still lack a systematic understanding of their performances, because they are usually applied in different domains for different purposes, and built based on different inputs and outputs. Furthermore, existing evaluations tend to rely solely on a final success rate, making it difficult to pinpoint what ability is missing in LLMs and where the problem lies, which in turn, blocks embodied agents from leveraging LLMs effectively and selectively.
+                            <b>Baseline:</b> 
+                            Video detailed captioning is a key task which aims to generate comprehensive and coherent textual descriptions of video content, benefiting both video understanding and generation. 
+                            In this paper, we propose AuroraCap, a video captioner based on a large multimodal model. 
+                            We follow the simplest architecture design without additional parameters for temporal modeling. 
+                            To address the overhead caused by lengthy video sequences, we implement the token merging strategy, reducing the number of input visual tokens.
+                            Surprisingly, we found that this strategy results in little performance loss. 
+                            AuroraCap shows superior performance on various video and image captioning benchmarks, for example, obtaining a CIDEr of 88.9 on Flickr30k, beating GPT-4V (55.3) and Gemini-1.5 Pro (82.2). 
                         </p>
                         <p>
-                            <b>Method:</b> To address these limitations, we propose a generalized interface (<b>Embodied Agent Interface</b>) that supports the formalization of various types of tasks and input-output specifications of LLM-based modules. Specifically, it allows us to unify <b>1)</b> a broad set of embodied decision making tasks involving both state and temporally extended goals, <b>2)</b> four commonly-used LLM-based modules for decision making: goal interpretation, subgoal decomposition, action sequencing, and transition modeling, and <b>3)</b> a collection of fine-grained metrics which break down evaluation into various types of errors, such as hallucination errors, affordance errors, various types of planning errors, etc.
-                        </p>
-                        <p>
-                            <b>Conclusion:</b> Overall, our benchmark offers a comprehensive and systematic assessment of LLMs' performance for different subtasks, pinpointing the strengths and weaknesses in LLM-powered embodied AI systems, and providing insights for effective and selective use of LLMs in embodied decision making.
+                            <b>Benchmark and Metric:</b> 
+                            However, existing video caption benchmarks only include simple descriptions, consisting of a few dozen words, which limits research in this field. 
+                            Therefore, we develop VDC, a video detailed captioning benchmark with over one thousand carefully annotated structured captions. 
+                            In addition, we propose a new LLM-assisted metric VDCScore for bettering evaluation, which adopts a divide-and-conquer strategy to transform long caption evaluation into multiple short question-answer pairs. 
+                            With the help of human Elo ranking, our experiments show that this benchmark better correlates with human judgments of video detailed captioning quality. 
                         </p>
                     </div>
                     <figure>
