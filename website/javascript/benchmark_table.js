@@ -352,25 +352,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: "Model Family",
                     field: "model",
                     widthGrow: 1.5,
-                    minWidth: 180
+                    minWidth: 160
                 },
                 {
                     title: "Frames",
                     field: "frames",
                     widthGrow: 0.9,
-                    minWidth: 120
+                    minWidth: 100
                 },
                 {
                     title: "TPF",
                     field: "tpf",
                     widthGrow: 0.9,
-                    minWidth: 120
+                    minWidth: 60
                 },
                 {
                     title: "Avg. VDC",
                     columns: [
-                        { title: "Acc.", field: "avg_acc", hozAlign: "center", formatter: barColorFn, minWidth: 90 },
-                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: barColorFn, minWidth: 90 },
+                        { title: "Acc.", field: "avg_acc", hozAlign: "center", formatter: barColorFn, minWidth: 50 },
+                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: barColorFn, minWidth: 70 },
                     ]
                 },
                 {
