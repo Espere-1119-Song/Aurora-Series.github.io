@@ -20,7 +20,7 @@ function single_curve() {
     var height = image_size_height + indicator_image_size + indicator_image_padding + indicator_box_top_padding;
 
     var base_image_name = '1';
-    var base_dir = `assets/img/single_curve/${base_image_name}/`;
+    var base_dir = `website/img/single_curve/${base_image_name}/`;
     
     var image_data = [
         { x: 0, y: 0, id: 'display_image_tome'},

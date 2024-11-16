@@ -739,7 +739,7 @@
                 </p>
                 <d-figure id="fig-vision_connector">
                     <figure>
-                        <img data-zoomable="" draggable="false" src="website/img/tome.png" alt="Ablation study" style="width: 100%;display: block; margin: 0 auto;">
+                        <img data-zoomable="" draggable="false" src="website/img/tome.png" alt="Ablation study" style="width: 80%;display: block; margin: 0 auto;">
                         <figcaption>
                             Visualization of token merging ratio on various image and video understanding tasks. 
                             The solid line indicates the average performance across various tasks, and the shaded area represents performance variability. 
@@ -774,6 +774,25 @@
                         </d-figure>
                     </div>
                 </div>
+                <br>
+                <p>
+                    To assess the inference speed, we utilize the inference time per video question-answering pair in seconds (TPV) as an evaluative metric. 
+                    Figure below indicates the minimum TPV achievable in our settings including with or without token merging and SGLang across seven video understanding datasets. 
+                    Reducing the visual tokens and using SGLang result in excellent inference times per video question-answering pair while all the datasets with short video and question inputs. 
+                </p>
+                <d-figure id="fig-vision_connector">
+                    <figure>
+                        <img data-zoomable="" draggable="false" src="website/img/sglang.png" alt="Video length in VDC" style="width: 100%;display: block; margin: 0 auto;">
+                        <figcaption>
+                            Comparison between different inference settings: 
+                            <b>A</b>: R<sub>vtk</sub> = 1.0</span>, without SGLang, 
+                            <b>B</b>: R<sub>vtk</sub> = 0.1</span>, without SGLang, 
+                            <b>C</b>: R<sub>vtk</sub> = 1.0</span>, with SGLang, 
+                            <b>D</b>: R<sub>vtk</sub> = 0.1</span>, with SGLang. 
+                            The number indicates the maximum inference time in seconds for each benchmark.
+                        </figcaption>
+                    </figure>
+                </d-figure>
             </div>
         </div>
     </section>
