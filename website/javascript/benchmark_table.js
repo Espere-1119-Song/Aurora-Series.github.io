@@ -11,7 +11,7 @@ var chartFormatter = function (cell, formatterParams, onRendered) {
 
     //add values to chart and style
     content.classList.add(formatterParams.type);
-    content.inneHrTML = values.join(",");
+    content.innerHTML = values.join(",");
 
     //setup chart options
     var options = {
@@ -213,7 +213,7 @@ var colorFormatterObject = function (cell, formatterParams) {
 }
 
 
-var barColorFn = function (value, formatterParams) {
+var barColorFn = function (cell, formatterParams) {
     var value = cell.getValue();
 
     // Check for the specific string "-"
