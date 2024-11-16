@@ -6,7 +6,7 @@ function cases() {
     var indicator_image_size = 132;
     var indicator_image_padding = 10;
 
-    var base_dir = 'assets/vid/cases/';
+    var base_dir = 'website/vid/cases/';
     
     var indicator_data = [
         { id: 'case_1', opacity: 1.0, fontSize: '0.75em', title: '<b>[detailed caption] (235 words)</b> The video depicts a serene beach scene where a young woman stands on the sandy shore, gazing out towards the ocean. She is wearing a dark blue beanie and a red jacket, adding a pop of color to the otherwise muted scene. The beach, a vast expanse of sand, stretches out in front of her, meeting the ocean at the horizon. The ocean, a vast body of water, is visible in the background. The beach is bathed in a soft, diffused light, creating a dreamy atmosphere. The girls gaze is directed towards the front, suggesting a sense of wonder or contemplation. The image is slightly blurred, adding a dreamy quality to the scene. The woman\'s position on the beach, coupled with the gentle waves of the ocean, suggests a moment of contemplation or admiration. The relative positions of the objects suggest a peaceful day at the beach, with the girl possibly enjoying the serene view of the ocean. The colors are mostly muted, with the girls red jacket standing out against the sandy beach and the blue ocean. The blurred background and the out-of-focus elements, such as the ocean and the sky, contribute to the sense of tranquility and focus on the woman. There is no text present in the video, and the colors are muted, with the exception of the pink jacket, which stands out against the more subdued tones of the surroundings.'},
