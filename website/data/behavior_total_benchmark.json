@@ -17,7 +17,7 @@
     "object_score": 2.41
   },
   {
-    "model": "Aria",
+    "model": "Aria-3.5B×8",
     "frames": "64",
     "tpf": "128",
     "avg_acc": 42.53,
