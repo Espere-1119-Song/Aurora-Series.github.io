@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var behavior_columns = [
                 {
-                    title: "Model Family",
+                    title: "Model<br>Family",
                     field: "model",
                     widthGrow: 1.5,
                     minWidth: 140
@@ -214,13 +214,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     title: "# F",
                     field: "frames",
                     widthGrow: 0.9,
-                    minWidth: 100
+                    minWidth: 50
                 },
                 {
                     title: "TPF",
                     field: "tpf",
                     widthGrow: 0.9,
-                    minWidth: 60
+                    minWidth: 70
                 },
                 {
                     title: "Avg. VDC",
