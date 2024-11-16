@@ -6,7 +6,7 @@ function tome_vis() {
     var indicator_image_size = 226;
     var indicator_image_padding = 10;
 
-    var base_dir = 'assets/img/tome_vis/';
+    var base_dir = 'website/img/tome_vis/';
     
     var image_data = [
         { id: 'display_image_fig1', title: 'COCO:COCO-train2014-000000247906'},
