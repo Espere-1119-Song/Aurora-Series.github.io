@@ -732,9 +732,48 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-
                 <h3 class="title is-3">Ablation Study</h3>
-
+                <p>
+                    As a core training and inference strategy of AuroraCap, token merging plays a significant role in reducing the number of visual tokens. 
+                    We further study how the video detailed captioning capability is influenced by token merge ratio.
+                </p>
+                <d-figure id="fig-vision_connector">
+                    <figure>
+                        <img data-zoomable="" draggable="false" src="website/img/tome.png" alt="Ablation study" style="width: 100%;display: block; margin: 0 auto;">
+                        <figcaption>
+                            Visualization of token merging ratio on various image and video understanding tasks. 
+                            The solid line indicates the average performance across various tasks, and the shaded area represents performance variability. 
+                        </figcaption>
+                    </figure>
+                </d-figure>
+                <br>
+                <p>
+                    We define the performance percentage as the proportion between the highest and lowest values on the entire performance curve. 
+                    We highlight the token merging ratio when achieving 90% and 80% performance with the dash line and filled area. 
+                    We found that token merging significantly reduces the number of tokens while maintaining minimal performance drop, and even showing improvement in some tasks. 
+                </p>
+                <div class="collapsible-section">
+                    <button class="button is-fullwidth toggle-section" aria-controls="vis_ablation">
+                        <span>View token merging ratio curve on various tasks.</span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                    <div id="vis_ablation" class="collapse-content">
+                        <d-figure>
+                            <figure class="l-body">
+                                <div id="singlecurve_div">
+                                    <div id="single_curve">
+                                        <script src="website/javascript/single_curve.js"></script>
+                                    </div>
+                                </div>
+                                <figcaption>
+                                    Ablation study on token merging ratio on various image and video understanding tasks.
+                                </figcaption>
+                            </figure>
+                        </d-figure>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -747,11 +786,11 @@
             <h2 class="title">BibTeX</h2>
             <pre>
                 @article{auroracap,
-                    &nbsp;&nbsp;title={AuroraCap: Efficient, Performant Video Detailed Captioning and a New Benchmark},
-                    &nbsp;&nbsp;author={Wenhao Chai, Enxin Song, Yilun Du, Chenlin Meng, Vashisht Madhavan, Omer Bar-Tal, Jeng-Neng Hwang, Saining Xie, Christopher D. Manning},
-                    &nbsp;&nbsp;year={2024},
-                    &nbsp;&nbsp;journal={arXiv preprint arXiv:2410.03051},
-                    }
+                    title={AuroraCap: Efficient, Performant Video Detailed Captioning and a New Benchmark},
+                    author={Wenhao Chai, Enxin Song, Yilun Du, Chenlin Meng, Vashisht Madhavan, Omer Bar-Tal, Jeng-Neng Hwang, Saining Xie, Christopher D. Manning},
+                    year={2024},
+                    journal={arXiv preprint arXiv:2410.03051},
+                }
             </pre>
         </div>
     </section>
