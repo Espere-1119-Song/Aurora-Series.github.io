@@ -176,6 +176,41 @@ var colorFormatterTrans = function (cell, formatterParams) {
     return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
+var colorFormatterObject = function (cell, formatterParams) {
+    var value = cell.getValue();
+
+    // Check for the specific string "-"
+    if (value === "-") {
+        return value;
+    }
+
+    // Default values
+    var defaults = {
+        min: 0.0,
+        max: 100.0,
+        startColor: { r: 255, g: 255, b: 255 },
+        endColor: { r: 179, g: 170, b: 210 }
+    };
+
+    // Override defaults with provided formatterParams values
+    var min = (formatterParams && formatterParams.min) || defaults.min;
+    var max = (formatterParams && formatterParams.max) || defaults.max;
+    var startColor = (formatterParams && formatterParams.startColor) || defaults.startColor;
+    var endColor = (formatterParams && formatterParams.endColor) || defaults.endColor;
+
+    // Normalize the value between 0 and 1
+    var normalizedValue = (value - min) / (max - min);
+
+    // Compute the color gradient 
+    var red = Math.floor(startColor.r + (endColor.r - startColor.r) * normalizedValue);
+    var green = Math.floor(startColor.g + (endColor.g - startColor.g) * normalizedValue);
+    var blue = Math.floor(startColor.b + (endColor.b - startColor.b) * normalizedValue);
+
+    // make sure the value is rounded to 1 decimal place
+    value = parseFloat(value).toFixed(1)
+
+    return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
+}
 
 
 var barColorFn = function (value, formatterParams) {
@@ -320,59 +355,59 @@ document.addEventListener('DOMContentLoaded', function () {
                     minWidth: 180
                 },
                 {
-                    title: "Access",
-                    field: "access",
+                    title: "Frames",
+                    field: "frames",
                     widthGrow: 0.9,
                     minWidth: 120
                 },
                 {
-                    title: "Release<br>Date",
-                    field: "release",
+                    title: "TPF",
+                    field: "tpf",
                     widthGrow: 0.9,
                     minWidth: 120
                 },
                 {
-                    title: "Overall<br>Perf.",
-                    field: "overall_performance",
-                    formatter: "progress",
-                    minWidth: 90,
-                    formatterParams: {
-                        min: 0, max: 80,
-                        legend: true,
-                        color: barColorFn,
-                    },
-                },
-                {
-                    title: "Goal<br>Interpretation",
-                    columns: [{
-                        title: "F1",
-                        field: "goal_interpretation_f1",
-                        hozAlign: "center",
-                        formatter: colorFormatterGoalInt,
-                        minWidth: 90
-                    }]
-                },
-                {
-                    title: "Action Sequencing",
+                    title: "Avg. VDC",
                     columns: [
-                        { title: "Task<br>SR", field: "action_sequencing_task_sr", hozAlign: "center", formatter: colorFormatterActionSeq, minWidth: 90 },
-                        { title: "Exec.<br>SR", field: "action_sequencing_execution_sr", hozAlign: "center", formatter: colorFormatterActionSeq, minWidth: 90 },
+                        { title: "Acc.", field: "avg_acc", hozAlign: "center", formatter: barColorFn, minWidth: 90 },
+                        { title: "Score", field: "avg_score", hozAlign: "center", formatter: barColorFn, minWidth: 90 },
                     ]
                 },
                 {
-                    title: "Subgoal Decomposition",
+                    title: "Detailed",
                     columns: [
-                        { title: "Task<br>SR", field: "subgoal_decomposition_task_sr", hozAlign: "center", formatter: colorFormatterSubgoal, minWidth: 90 },
-                        { title: "Exec.<br>SR", field: "subgoal_decomposition_execution_sr", hozAlign: "center", formatter: colorFormatterSubgoal, minWidth: 90 },
+                        { title: "Acc.", field: "detailed_acc", hozAlign: "center", formatter: colorFormatterGoalInt, minWidth: 90 },
+                        { title: "Score", field: "detailed_score", hozAlign: "center", formatter: colorFormatterGoalInt, minWidth: 90 },
                     ]
                 },
                 {
-                    title: "Transition Modeling",
+                    title: "Camera",
                     columns: [
-                        { title: "F1", field: "transition_modeling_f1", hozAlign: "center", formatter: colorFormatterTrans, minWidth: 90 },
-                        { title: "Planner<br>SR", field: "transition_modeling_planner_sr", hozAlign: "center", formatter: colorFormatterTrans, minWidth: 90 },
+                        { title: "Acc.", field: "camera_acc", hozAlign: "center", formatter: colorFormatterActionSeq, minWidth: 90 },
+                        { title: "Score", field: "camera_score", hozAlign: "center", formatter: colorFormatterActionSeq, minWidth: 90 },
                     ]
                 },
+                {
+                    title: "Short",
+                    columns: [
+                        { title: "Acc.", field: "short_acc", hozAlign: "center", formatter: colorFormatterSubgoal, minWidth: 90 },
+                        { title: "Score", field: "short_score", hozAlign: "center", formatter: colorFormatterSubgoal, minWidth: 90 },
+                    ]
+                },
+                {
+                    title: "Background",
+                    columns: [
+                        { title: "Acc.", field: "background_acc", hozAlign: "center", formatter: colorFormatterTrans, minWidth: 90 },
+                        { title: "Score", field: "background_score", hozAlign: "center", formatter: colorFormatterTrans, minWidth: 90 },
+                    ]
+                },
+                {
+                    title: "Object",
+                    columns: [
+                        { title: "Acc.", field: "object_acc", hozAlign: "center", formatter: colorFormatterObject, minWidth: 90 },
+                        { title: "Score", field: "object_score", hozAlign: "center", formatter: colorFormatterObject, minWidth: 90 },
+                    ]
+                }
             ];
 
             behavior_columns.forEach(column => {
