@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         let { min, max } = getColumnMinMax(behavior_total_benchmark_data, subColumn.field);
                         subColumn.formatterParams = { min, max };
                     });
-                } else if (column.field !== "overall_performance") {
+                } else if (column.field !== "model" && column.field !== "frames" && column.field !== "tpf") {
                     let { min, max } = getColumnMinMax(behavior_total_benchmark_data, column.field);
                     column.formatterParams = { min, max };
                 }
