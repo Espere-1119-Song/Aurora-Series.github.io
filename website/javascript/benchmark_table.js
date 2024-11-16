@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 ],
                 columnDefaults: {
                     tooltip: true,
+                    headerWordWrap: true,
                 },
                 columns: behavior_columns
             });
