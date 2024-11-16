@@ -23,9 +23,13 @@ function cases() {
 
     var video_overlay = d3.select('#video_overlay');
 
+    var total_indicators_width = (indicator_image_size + indicator_image_padding) * indicator_data.length - indicator_image_padding;
+    var indicators_start_x = (static_width - total_indicators_width) / 2;
+
     var indicator_group = container
         .append('g')
-        .attr('id', 'indicator_group');
+        .attr('id', 'indicator_group')
+        .attr('transform', `translate(${indicators_start_x}, 0)`);
 
     function updateContainerHeight(height) {
         var total_height = height + margin.top + margin.bottom + indicator_image_size + 20;
@@ -34,7 +38,7 @@ function cases() {
             .attr('viewBox', `0 0 ${static_width} ${total_height}`);
         
         indicator_group
-            .attr('transform', `translate(${margin.left}, ${height + margin.top + 20})`);
+            .attr('transform', `translate(${indicators_start_x}, ${height + margin.top + 20})`);
     }
 
     function image_init() {
