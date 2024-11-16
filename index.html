@@ -226,22 +226,6 @@
                                         <span>Data</span>
                                     </a> &nbsp;&nbsp;
                                 </span>
-                                <!-- Virtualhome Pypi Python Package Link. -->
-                                <!-- <span class="link-block">
-                                    <a href="https://pypi.org/project/virtualhome-eval/" class="btn btn-outline-dark" role="button">
-                                        <span class="icon"><i class="fab fa-python"></i></span>
-                                        <span>VirtualHome Eval</span> 
-                                    </a> &nbsp;&nbsp;
-                                </span> -->
-                                <!-- Docs Link. -->
-                                <!-- <span class="link-block">
-                                    <a href="https://embodied-agent-eval.readthedocs.io/en/latest/#" class="btn btn-outline-dark" role="button">
-                                        <span class="icon">
-                                            <i class="fa fa-book"></i>
-                                        </span>
-                                        <span>Docs</span>
-                                    </a>
-                                </span> -->
                             </div>
                         </div>
 
@@ -343,25 +327,41 @@
         </table>
     </div>
 
-    <section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-            <video id="teaser" autoplay muted loop playsinline controls width="100%">
-                <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-video-v2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <!-- Abstract. -->
+    <section class="section" id="abstract">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-2">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            <b>Baseline:</b> 
+                            Video detailed captioning is a key task which aims to generate comprehensive and coherent textual descriptions of video content, benefiting both video understanding and generation. 
+                            In this paper, we propose AuroraCap, a video captioner based on a large multimodal model. 
+                            We follow the simplest architecture design without additional parameters for temporal modeling. 
+                            To address the overhead caused by lengthy video sequences, we implement the token merging strategy, reducing the number of input visual tokens.
+                            Surprisingly, we found that this strategy results in little performance loss. 
+                            AuroraCap shows superior performance on various video and image captioning benchmarks, for example, obtaining a CIDEr of 88.9 on Flickr30k, beating GPT-4V (55.3) and Gemini-1.5 Pro (82.2). 
+                        </p>
+                        <p>
+                            <b>Benchmark and Metric:</b> 
+                            However, existing video caption benchmarks only include simple descriptions, consisting of a few dozen words, which limits research in this field. 
+                            Therefore, we develop VDC, a video detailed captioning benchmark with over one thousand carefully annotated structured captions. 
+                            In addition, we propose a new LLM-assisted metric VDCScore for bettering evaluation, which adopts a divide-and-conquer strategy to transform long caption evaluation into multiple short question-answer pairs. 
+                            With the help of human Elo ranking, our experiments show that this benchmark better correlates with human judgments of video detailed captioning quality. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
     </section>
         
 
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <!-- <h2 class="subtitle">
-                    <b>Benchmark</b>: We present VDC, the first benchmark for detailed video captioning, featuring over one thousand videos with significantly longer and more detailed captions. We comprehensively evaluate proprietary and open-source models using our proposed VDCscore metric.
-                </h2> -->
-                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="main-results-tab" data-bs-toggle="tab"
                             data-bs-target="#benchmark-table-content" type="button" role="tab"
@@ -3947,35 +3947,7 @@
 
     
 
-    <section class="section" id="abstract">
-        <div class="container is-max-desktop">
-            <!-- Abstract. -->
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-four-fifths">
-                    <h2 class="title is-2">Abstract</h2>
-                    <div class="content has-text-justified">
-                        <p>
-                            <b>Baseline:</b> 
-                            Video detailed captioning is a key task which aims to generate comprehensive and coherent textual descriptions of video content, benefiting both video understanding and generation. 
-                            In this paper, we propose AuroraCap, a video captioner based on a large multimodal model. 
-                            We follow the simplest architecture design without additional parameters for temporal modeling. 
-                            To address the overhead caused by lengthy video sequences, we implement the token merging strategy, reducing the number of input visual tokens.
-                            Surprisingly, we found that this strategy results in little performance loss. 
-                            AuroraCap shows superior performance on various video and image captioning benchmarks, for example, obtaining a CIDEr of 88.9 on Flickr30k, beating GPT-4V (55.3) and Gemini-1.5 Pro (82.2). 
-                        </p>
-                        <p>
-                            <b>Benchmark and Metric:</b> 
-                            However, existing video caption benchmarks only include simple descriptions, consisting of a few dozen words, which limits research in this field. 
-                            Therefore, we develop VDC, a video detailed captioning benchmark with over one thousand carefully annotated structured captions. 
-                            In addition, we propose a new LLM-assisted metric VDCScore for bettering evaluation, which adopts a divide-and-conquer strategy to transform long caption evaluation into multiple short question-answer pairs. 
-                            With the help of human Elo ranking, our experiments show that this benchmark better correlates with human judgments of video detailed captioning quality. 
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </section>
 
     <section class="section" id="dataset_viewer">
         <div class="container is-max-desktop">
@@ -4173,7 +4145,7 @@
                         
 
                         
-                        <!-- <div id="results-carousel" class="carousel results-carousel">
+                        <div id="results-carousel" class="carousel results-carousel">
                             <div class="box m-5">
                               <div class="content has-text-centered">
                                 <img src="website/img/virtualhome_data_format.png" alt="algebraic reasoning" width="80%"/>
@@ -4186,7 +4158,7 @@
                                 <p> Summary of the 31 different source datasets in abc.
                               </div>
                             </div>
-                          </div> -->
+                          </div>
 
                         <figure>
                             <img src="website/img/virtualhome_data_format.png" alt="VirtualHome dataset structure example" style="width: 60%;">
