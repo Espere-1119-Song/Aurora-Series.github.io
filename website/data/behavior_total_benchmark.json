@@ -80,7 +80,9 @@
     "short_acc": 39.08,
     "short_score": 1.94,
     "background_acc": 35.77,
-    "background_score": 1.81
+    "background_score": 1.81,
+    "object_acc": 37.12,
+    "object_score": 1.89
   },
   {
     "model": "MovieChat-7B",
