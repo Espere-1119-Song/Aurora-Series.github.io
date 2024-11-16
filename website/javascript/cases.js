@@ -74,7 +74,7 @@ function cases() {
             .append('foreignObject')
             .attr('width', indicator_image_size)
             .attr('height', indicator_image_size)
-            .attr('x', (d, i) => indicators_start_x + i * (indicator_image_size + indicator_image_padding))
+            .attr('x', (d, i) => i * (indicator_image_size + indicator_image_padding))
             .attr('y', 0)
             .attr('opacity', d => d.opacity)
             .each(function(d) {
