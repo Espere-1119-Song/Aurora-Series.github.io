@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 responsiveLayoutCollapseStartOpen: false,
                 movableColumns: false,
                 initialSort: [
-                    { column: "overall_performance", dir: "desc" },
+                    { column: "avg_acc", dir: "desc" },
                 ],
                 columnDefaults: {
                     tooltip: true,
