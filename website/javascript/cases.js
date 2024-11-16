@@ -50,8 +50,9 @@ function cases() {
         video_overlay.append('div')
             .attr('id', 'display_case_video1_title')
             .style('text-align', 'justify')
-            // .style('font-weight', 'bold')
-            .style('margin-top', '8px')
+            .style('margin', '8px auto') // 上下margin 8px，左右自动居中
+            .style('width', image_size_width + 'px') // 设置与视频相同的宽度
+            .style('max-width', '100%') // 响应式处理
             .style('text-justify', 'inter-word'); 
 
         video_overlay.append('style')
