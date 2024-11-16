@@ -391,6 +391,9 @@
                         <br>
                         <h3 class="title is-4">Training Recipe</h3>
                         <p>
+                            We use over 20 million high-quality image/video-text pairs to train AuroraCap in three stages. The training datasets are released at <a href="https://huggingface.co/datasets/Reself/AuroraCap-trainset" target="_blank">HuggingFace</a>.
+                        </p>
+                        <p>
                             <strong>Pretraining stage.</strong> 
                             We first align visual features with the word embedding space of LLMs. 
                             To achieve this, we freeze the pretrained ViT and LLM, training solely the vision-language connector. 
@@ -403,9 +406,22 @@
                             <strong>Language stage.</strong> 
                             Finally, we conduct end-to-end training, which means all the components are trainable, with the most high-quality public data during language stage. 
                         </p>
-
-
-                        
+                        <div class="collapsible-section">
+                            <button class="button is-fullwidth toggle-section" aria-controls="transition_table_vh_2">
+                                <span>View traiset of AuroraCap</span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                            <div id="transition_table_vh_2" class="collapse-content">
+                                <iframe
+                                src="https://huggingface.co/datasets/wchai/AuroraCap-trainset/embed/viewer/default/projection"
+                                frameborder="0"
+                                width="100%"
+                                height="560px"
+                                ></iframe>
+                            </div>
+                        </div>
                     </div>
             </div>
         </div>
