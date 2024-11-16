@@ -1,4 +1,3 @@
-
 //Formatter to generate charts
 var chartFormatter = function (cell, formatterParams, onRendered) {
     var content = document.createElement("span");
@@ -222,27 +221,26 @@ var barColorFn = function (cell, formatterParams) {
     }
 
     var defaults = {
-        range : [-50, 50],
+        range: [-50, 50],
         low: { r: 255, g: 255, b: 255 },
         high: { r: 206, g: 212, b: 218 }
     };
 
     // Override defaults with provided formatterParams values
-    var min = (formatterParams && formatterParams.min) || defaults.min;
-    var max = (formatterParams && formatterParams.max) || defaults.max;
-    var startColor = (formatterParams && formatterParams.startColor) || defaults.startColor;
-    var endColor = (formatterParams && formatterParams.endColor) || defaults.endColor;
+    var range = (formatterParams && formatterParams.range) || defaults.range;
+    var low = (formatterParams && formatterParams.low) || defaults.low;
+    var high = (formatterParams && formatterParams.high) || defaults.high;
 
     // Normalize the value between 0 and 1
-    var normalizedValue = (value - min) / (max - min);
+    var normalizedValue = (value - range[0]) / (range[1] - range[0]);
 
     // Compute the color gradient 
-    var red = Math.floor(startColor.r + (endColor.r - startColor.r) * normalizedValue);
-    var green = Math.floor(startColor.g + (endColor.g - startColor.g) * normalizedValue);
-    var blue = Math.floor(startColor.b + (endColor.b - startColor.b) * normalizedValue);
+    var red = Math.floor(low.r + (high.r - low.r) * normalizedValue);
+    var green = Math.floor(low.g + (high.g - low.g) * normalizedValue);
+    var blue = Math.floor(low.b + (high.b - low.b) * normalizedValue);
 
     // make sure the value is rounded to 1 decimal place
-    value = parseFloat(value).toFixed(1)
+    value = parseFloat(value).toFixed(1);
 
     return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
