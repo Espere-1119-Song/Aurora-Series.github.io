@@ -214,6 +214,13 @@ var colorFormatterObject = function (cell, formatterParams) {
 
 
 var barColorFn = function (value, formatterParams) {
+    var value = cell.getValue();
+
+    // Check for the specific string "-"
+    if (value === "-") {
+        return value;
+    }
+
     var defaults = {
         range : [-50, 50],
         low: { r: 255, g: 255, b: 255 },
@@ -221,26 +228,23 @@ var barColorFn = function (value, formatterParams) {
     };
 
     // Override defaults with provided formatterParams values
+    var min = (formatterParams && formatterParams.min) || defaults.min;
+    var max = (formatterParams && formatterParams.max) || defaults.max;
+    var startColor = (formatterParams && formatterParams.startColor) || defaults.startColor;
+    var endColor = (formatterParams && formatterParams.endColor) || defaults.endColor;
 
-    var low_range = (formatterParams && formatterParams.range[0]) || defaults.range[0];
-    var high_range = (formatterParams && formatterParams.range[1]) || defaults.range[1];
-    var low = (formatterParams && formatterParams.low) || defaults.low;
-    var high = (formatterParams && formatterParams.high) || defaults.high;
+    // Normalize the value between 0 and 1
+    var normalizedValue = (value - min) / (max - min);
 
-    // Clamp the value to the range [-100, 100]
-    value = Math.max(low_range, Math.min(high_range, value));
-    var range = high_range - low_range;
+    // Compute the color gradient 
+    var red = Math.floor(startColor.r + (endColor.r - startColor.r) * normalizedValue);
+    var green = Math.floor(startColor.g + (endColor.g - startColor.g) * normalizedValue);
+    var blue = Math.floor(startColor.b + (endColor.b - startColor.b) * normalizedValue);
 
-    // Normalize the value to the range [0, 1]
-    var normalizedValue = (value + range / 2) / range;
-    // Interpolate between the two colors based on the normalized value
-    var interpolated = {
-        r: Math.floor(low.r + (high.r - low.r) * normalizedValue),
-        g: Math.floor(low.g + (high.g - low.g) * normalizedValue),
-        b: Math.floor(low.b + (high.b - low.b) * normalizedValue)
-    };
+    // make sure the value is rounded to 1 decimal place
+    value = parseFloat(value).toFixed(1)
 
-    return 'rgba(' + interpolated.r + ',' + interpolated.g + ',' + interpolated.b + ',0.9)';
+    return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
 document.addEventListener('DOMContentLoaded', function () {
