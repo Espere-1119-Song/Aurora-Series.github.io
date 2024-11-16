@@ -291,7 +291,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     tooltip: true,
                     headerWordWrap: true,
                 },
-                columns: behavior_columns
+                columns: behavior_columns,
+                rowFormatter: function(row) {
+                    // 根据条件判断是否加粗
+                    if (row.getData().model === "AuroraCap-7B") {
+                        row.getElement().style.fontWeight = "bold";
+                        // 可选：也可以添加其他样式
+                        // row.getElement().style.backgroundColor = "#f0f0f0";
+                    }
+                },
             });
         });
 })
