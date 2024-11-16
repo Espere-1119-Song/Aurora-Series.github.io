@@ -105,7 +105,7 @@
 <body>
 
     
-    
+    <!-- Title. -->
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">
@@ -327,6 +327,7 @@
         </table>
     </div>
 
+
     <!-- Abstract. -->
     <section class="section" id="abstract">
         <div class="container is-max-desktop">
@@ -355,6 +356,90 @@
             </div>
 
         </div>
+    </section>
+
+
+    <!-- Method -->
+    <section class="section" id="embodied_agent_interface_detail">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                    <h2 class="title is-2" style="text-align: center;">AuroraCap: A Efficient and Performant Video Detailed Captioner</h2>
+                    <br>
+                    <div class="content has-text-justified">
+                        <h3 class="title is-4">Architecture</h3>
+                        <br>
+                        <p>
+                            <strong>LLaVA.<d-cite key="liu2024visual"></d-cite></strong> 
+                            To effectively leverage the capabilities of both the pre-trained LLM and visual model, LLaVA adapt a simple multilayer perceptron (MLP) projection layer to connect each patch tokens of image features into the word embedding space. 
+                        </p>
+                        <br>
+                        <p>
+                            <strong>Token merging.<d-cite key="bolya2022token"></d-cite></strong> 
+                            To increase the throughput of existing ViT models, Token Merging is proposed to gradually combines similar tokens in a transformer to reduce the number of tokens passing through ViT models. 
+                            Token Merging has been proven to be effective on image and video classification tasks even without the need for training.
+                            We conduct frame-wise token merging in AuroraCap, where the feature is extracted by CLIP ViT-H<d-cite key="fang2023data"></d-cite> model. 
+                            We show token merging visualization examples from  COCO<d-cite key="lin2014microsoft"></d-cite>, VG<d-cite key="krishna2017visual"></d-cite>, SA-1B<d-cite key="kirillov2023segment"></d-cite> as follows:
+                            <d-figure>
+                                <figure class="l-body">
+                                    <div id='tomevis_div'></div>
+                                    <script src="https://d3js.org/d3.v7.min.js"></script>
+                                    <script src="website/javascript/tome_vis.js"></script>
+                                    <figcaption>
+                                        Token merging visualization. From left to right, the number of visual tokens representing the images are 490, 154, 18, and 6.
+                                    </figcaption>
+                                    </figure>
+                            </d-figure>
+                        </p>
+
+
+                        
+                        <h3 class="title is-4">Ability Module 2: Subgoal Decomposition</h3>
+                        <br>
+                        <p>
+                            Subgoal Decomposition generates a sequence of states, where each state can be a set of objects and their states. Here, we highlight the important states, such as the transitions between a sequence of next_to(rag.0, sink.82), toggled_on(sink.82), soaked(rag.0), toggled_off(sink.82), open(fridge.97), not_stained(fridge.97). To achieve these state transitions, we can use a high-level planner such as BFS to search for the Action Sequences that achieve these state transitions. We obtain the following action sequence: RIGHT_GRASP(rag.0), RIGHT_PLACE_NEXTTO(sink.82), TOGGLE_ON(sink.82), SOAK(rag.0), TOGGLE_OFF(sink.82), OPEN(fridge.97), CLEAN(fridge.97). Note that multiple actions may be required to achieve a single one-step state transition. For example, to perform the state transition next_to(rag.0, sink.82) → toggled_on(sink.82), we need two actions RIGHT_GRASP(rag.0), RIGHT_PLACE_NEXTTO(sink.82). See <a href="#EAgent_taxtonomy_example">Figure 2</a> for the input and output formulation.
+                        </p>
+
+                        <figure id="EAgent_taxtonomy_example">
+                            <img src="website/img/taxonomy-ability.png" alt="Embodied agent interface taxonomy example." class="EAgent_taxtonomy_image" style="width: 75%;"/>
+                            <figcaption>
+                                <b>Figure 2:</b> The input and output formulation of four ability modules for <b>Embodied Agent Interface</b>.
+                            </figcaption>
+                        </figure>
+                        
+                        <h3 class="title is-4">Ability Module 3: Action Sequencing</h3>
+                        <video id="action-sequencing-video" muted loop playsinline controls width="100%">
+                            <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-action.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <br>
+                        <br>
+                        <p>
+                            Action Sequences are essential to achieve the state transitions identified in Subgoal Decomposition. For example, a successful execution of the action sequence RIGHT_GRASP(rag.0), RIGHT_PLACE_NEXTTO(sink.82), TOGGLE_ON(sink.82), SOAK(rag.0), TOGGLE_OFF(sink.82), OPEN(fridge.97), CLEAN(fridge.97) is shown in <a href="#EAgent_excution_example">Figure 3</a>.
+                        </p>
+                        
+                        <h3 class="title is-4">Ability Module 4: Transition Modeling</h3>
+                        <video id="transition-modeling-video" muted loop playsinline controls width="100%">
+                            <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-transition.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <br>
+                        <br>
+                        <p>
+                            Transition Modeling serves as the low-level controller to guide the simulator in performing state transitions from preconditions to post-effects. For example, in cleaning task, the input is the operator name soak, and the preconditions are three states: holding (?obj1), next_to (?sink ?agent), and toggled_on (?sink). The post effect after executing SOAK is soaked (?obj1).
+                        </p>
+                        
+                        
+                        
+                        <figure id="EAgent_excution_example">
+                            <img src="website/img/excution_example.png" alt="Example of successful execution in Embodied Agent Interface." class="EAgent_excution_image" style="width: 75%;"/>
+                            <figcaption>
+                                <b>Figure 3:</b> An example of successful execution in <b>Embodied Agent Interface</b>.
+                            </figcaption>
+                        </figure>
+                    </div>
+            </div>
+        </div>
+
     </section>
         
 
