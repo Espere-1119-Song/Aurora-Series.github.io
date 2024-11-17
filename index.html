@@ -500,6 +500,14 @@
                                 ></iframe>
                             </div>
                         </div>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const button = document.querySelector('[aria-controls="benchmark_table"]');
+                                if (button) {
+                                    button.click();
+                                }
+                            });
+                        </script>
                     </div>
             </div>
         </div>
